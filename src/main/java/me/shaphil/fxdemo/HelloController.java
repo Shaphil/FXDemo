@@ -1,6 +1,7 @@
 package me.shaphil.fxdemo;
 
 import javafx.fxml.FXML;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
 
 public class HelloController {
@@ -8,7 +9,14 @@ public class HelloController {
     private Label welcomeText;
 
     @FXML
+    private CheckBox checkBox;
+
+    @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+        if (checkBox.isSelected()) {
+            welcomeText.setText("All done");
+        } else {
+            welcomeText.setText("Welcome to JavaFX Application!");
+        }
     }
 }
